@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gis_SSM:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="webgis.war">
+      <element id="artifact" artifact-name="Gis_SSM:war exploded" />
+    </root>
+  </artifact>
+</component>
