@@ -17,6 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+      <!--设置mybatis-generator配置文件位置-->
     <mybatis.generator.generatorConfig.xml>${basedir}/src/test/resources/generatorConfig.xml</mybatis.generator.generatorConfig.xml>
     <mybatis.generator.generatorConfig.properties>file:///${basedir}/src/test/resources/generatorConfig.properties</mybatis.generator.generatorConfig.properties>
 
@@ -144,6 +145,29 @@
           <artifactId>spring-test</artifactId>
           <version>4.2.0.RELEASE</version>
       </dependency>
+
+      <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+          <version>1.2.47</version>
+      </dependency>
+
+      <!-- servlet api -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.0.1</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <!-- jstl -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+      </dependency>
+
 
   </dependencies>
 

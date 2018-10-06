@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gis.db.dao.MarksMapper" >
+  <resultMap id="BaseResultMap" type="com.gis.db.model.Marks" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="detailsid" property="detailsid" jdbcType="INTEGER" />
+    <result column="family" property="family" jdbcType="VARCHAR" />
+    <result column="grouper" property="grouper" jdbcType="VARCHAR" />
+    <result column="branch" property="branch" jdbcType="VARCHAR" />
+    <result column="languager" property="languager" jdbcType="VARCHAR" />
+    <result column="localism" property="localism" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="longitude" property="longitude" jdbcType="VARCHAR" />
+    <result column="latitude" property="latitude" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, detailsid, family, grouper, branch, languager, localism, province, city, longitude, 
+    latitude
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.gis.db.model.MarksExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from marks
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from marks
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from marks
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.gis.db.model.MarksExample" >
+    delete from marks
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.gis.db.model.Marks" >
+    insert into marks (id, detailsid, family, 
+      grouper, branch, languager, 
+      localism, province, city, 
+      longitude, latitude)
+    values (#{id,jdbcType=INTEGER}, #{detailsid,jdbcType=INTEGER}, #{family,jdbcType=VARCHAR}, 
+      #{grouper,jdbcType=VARCHAR}, #{branch,jdbcType=VARCHAR}, #{languager,jdbcType=VARCHAR}, 
+      #{localism,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{longitude,jdbcType=VARCHAR}, #{latitude,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gis.db.model.Marks" >
+    insert into marks
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="detailsid != null" >
+        detailsid,
+      </if>
+      <if test="family != null" >
+        family,
+      </if>
+      <if test="grouper != null" >
+        grouper,
+      </if>
+      <if test="branch != null" >
+        branch,
+      </if>
+      <if test="languager != null" >
+        languager,
+      </if>
+      <if test="localism != null" >
+        localism,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="longitude != null" >
+        longitude,
+      </if>
+      <if test="latitude != null" >
+        latitude,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="detailsid != null" >
+        #{detailsid,jdbcType=INTEGER},
+      </if>
+      <if test="family != null" >
+        #{family,jdbcType=VARCHAR},
+      </if>
+      <if test="grouper != null" >
+        #{grouper,jdbcType=VARCHAR},
+      </if>
+      <if test="branch != null" >
+        #{branch,jdbcType=VARCHAR},
+      </if>
+      <if test="languager != null" >
+        #{languager,jdbcType=VARCHAR},
+      </if>
+      <if test="localism != null" >
+        #{localism,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null" >
+        #{latitude,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.gis.db.model.MarksExample" resultType="java.lang.Integer" >
+    select count(*) from marks
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update marks
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.detailsid != null" >
+        detailsid = #{record.detailsid,jdbcType=INTEGER},
+      </if>
+      <if test="record.family != null" >
+        family = #{record.family,jdbcType=VARCHAR},
+      </if>
+      <if test="record.grouper != null" >
+        grouper = #{record.grouper,jdbcType=VARCHAR},
+      </if>
+      <if test="record.branch != null" >
+        branch = #{record.branch,jdbcType=VARCHAR},
+      </if>
+      <if test="record.languager != null" >
+        languager = #{record.languager,jdbcType=VARCHAR},
+      </if>
+      <if test="record.localism != null" >
+        localism = #{record.localism,jdbcType=VARCHAR},
+      </if>
+      <if test="record.province != null" >
+        province = #{record.province,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.longitude != null" >
+        longitude = #{record.longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="record.latitude != null" >
+        latitude = #{record.latitude,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update marks
+    set id = #{record.id,jdbcType=INTEGER},
+      detailsid = #{record.detailsid,jdbcType=INTEGER},
+      family = #{record.family,jdbcType=VARCHAR},
+      grouper = #{record.grouper,jdbcType=VARCHAR},
+      branch = #{record.branch,jdbcType=VARCHAR},
+      languager = #{record.languager,jdbcType=VARCHAR},
+      localism = #{record.localism,jdbcType=VARCHAR},
+      province = #{record.province,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
+      longitude = #{record.longitude,jdbcType=VARCHAR},
+      latitude = #{record.latitude,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gis.db.model.Marks" >
+    update marks
+    <set >
+      <if test="detailsid != null" >
+        detailsid = #{detailsid,jdbcType=INTEGER},
+      </if>
+      <if test="family != null" >
+        family = #{family,jdbcType=VARCHAR},
+      </if>
+      <if test="grouper != null" >
+        grouper = #{grouper,jdbcType=VARCHAR},
+      </if>
+      <if test="branch != null" >
+        branch = #{branch,jdbcType=VARCHAR},
+      </if>
+      <if test="languager != null" >
+        languager = #{languager,jdbcType=VARCHAR},
+      </if>
+      <if test="localism != null" >
+        localism = #{localism,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null" >
+        latitude = #{latitude,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gis.db.model.Marks" >
+    update marks
+    set detailsid = #{detailsid,jdbcType=INTEGER},
+      family = #{family,jdbcType=VARCHAR},
+      grouper = #{grouper,jdbcType=VARCHAR},
+      branch = #{branch,jdbcType=VARCHAR},
+      languager = #{languager,jdbcType=VARCHAR},
+      localism = #{localism,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
