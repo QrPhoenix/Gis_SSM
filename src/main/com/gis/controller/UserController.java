@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
  * Created by QXY on 2018/10/5.
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("")
 
 //这里用了@SessionAttributes，可以直接把model中的user(也就key)放入其中
 //这样保证了session中存在user这个对象
@@ -38,7 +38,7 @@ public class UserController {
         //若有user则添加到model里并且跳转到成功页面
         if(user != null){
             model.addAttribute("user",user);
-            return "success";
+            return "redirect:map/map";
         }
         return "fail";
     }

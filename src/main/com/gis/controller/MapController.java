@@ -19,7 +19,7 @@ import com.alibaba.fastjson.JSON;
  * Created by QXY on 2018/10/6.
  */
 @Controller
-@RequestMapping("/map")
+@RequestMapping("map")
 public class MapController {
 
 

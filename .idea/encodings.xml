@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Lyrics-Helper-master" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/lib/mysql-connector-java-5.1.30.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/musiclyric.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/audio.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/music_player.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/normalize.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/Like I Used To.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/cover.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/cover1.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/cover2.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/cover3.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/cover4.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/cover5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/menu.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/next.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/pause.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/play.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/player_icons_sprite.svg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/prev.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/images/volume.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/audio.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/audio_lrc.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/music_player.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/plugins.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/songs/Bea Miller - Open Your Eyes (Deep Blue Songspell).mp3" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/songs/Dart Rayne,Yura Moonlight,Cate Kanell - Shelter Me (Moonnight remix).mp3" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/songs/Lucy Rose - Shiver.mp3" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/songs/Terese Fredenwall - Drop the Fight.mp3" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/songs/伊美达 - 童话.mp3" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/songs/陈慧琳 - Love Paradise.mp3" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

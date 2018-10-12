@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<form action="/user/checkLogin" method="post">
+<form action="/checkLogin" method="post">
     <table>
         <tr>
             <td>用户名:</td>
