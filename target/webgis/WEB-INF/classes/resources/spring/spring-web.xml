@@ -38,4 +38,5 @@
     <mvc:resources mapping="/images/**" location="images/"/>
     <mvc:resources mapping="/css/**" location="css/"/>
     <mvc:resources mapping="/songs/**" location="songs/"/>
+    <mvc:resources mapping="/lyrics/**" location="lyrics/"/>
 </beans>

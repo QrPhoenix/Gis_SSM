@@ -4,7 +4,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <link rel="stylesheet" type="text/css" href="css/audio.css">
-
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <div class="audio-box">
     <div class="audio-container">
         <div class="audio-view">
@@ -112,17 +115,17 @@
 //            'title' : 'B.A.A.B'
 //        },false));
 
-//        /* 暂停播放 */
-//        audioFn.stopAudio();
-//
-//        /* 开启播放 */
-//        audioFn.playAudio();
-//
-//        /* 选择歌单中索引为3的曲目(索引是从0开始的)，第二个参数true立即播放该曲目，false则不播放 */
-//        audioFn.selectMenu(3,true);
-//
-//        /* 查看歌单中的曲目 */
-//        console.log(audioFn.song);
+        /* 暂停播放 */
+        audioFn.stopAudio();
+
+        /* 开启播放 */
+        audioFn.playAudio();
+
+        /* 选择歌单中索引为3的曲目(索引是从0开始的)，第二个参数true立即播放该曲目，false则不播放 */
+        audioFn.selectMenu(3,true);
+
+        /* 查看歌单中的曲目 */
+        console.log(audioFn.song);
 
         /* 当前播放曲目的对象 */
 //        console.log(audioFn.audio);

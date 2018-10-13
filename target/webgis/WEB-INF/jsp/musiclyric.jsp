@@ -16,37 +16,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/music_player.css">
-
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<noscript class="tip-overlay">
-    <div class="tip-container">
-        <h2>JavaScript 已被禁用</h2>
-        <p>如需获得完整体验，请启用浏览器中的 Javascript。</p>
-    </div>
-</noscript>
-<div class="tip-overlay">
-    <div class="tip-container">
-        <h2>注意</h2>
-        <p>您即将访问的页面需要加载较大文件，若您正在使用蜂窝数据网络，请注意流量使用状况。</p>
-        <a href="#" class="cancel">取消</a>
-        <a href="#" class="continue">继续</a>
-    </div>
-</div>
+<%--<div class="tip-overlay">--%>
+    <%--<div class="tip-container">--%>
+        <%--<h2>注意</h2>--%>
+        <%--<p>您即将访问的页面需要加载较大文件，若您正在使用蜂窝数据网络，请注意流量使用状况。</p>--%>
+        <%--<a href="#" class="cancel">取消</a>--%>
+        <%--<a href="#" class="continue">继续</a>--%>
+    <%--</div>--%>
+<%--</div>--%>
 <div class="wrapper">
     <div class="wrapper-background"></div>
     <div class="lyric-controller">
-        <div class="lyric-info">
-            <div class="lyric-albumart"></div>
-            <div class="music-info">
-                <h1 class="lyric-title">Shiver</h1>
-                <h2 class="lyric-author">Lucy Rose</h2>
-            </div>
-        </div>
         <div class="lyric-controller-inner">
             <div class="lyric-text"></div>
             <div class="music-player-controller no-touch">
@@ -63,10 +50,14 @@
                     <div class="control-panel">
                         <span class="forward-speed">8</span>
                         <span class="buttons">
+                                    <%--<input type="button" class="handcursor"--%>
+                                           <%--onclick='doLogin()' tabindex="5"  style="background:url(/images/prev.png); border-style:none;  width:124px; height:35px; background-repeat:no-repeat;"  />--%>
+                                    <%--<input type="button" class="glyphicon glyphicon-step-backward"  disabled>--%>
 									<input type="button" class="forward-button" disabled>
 									<input type="button" class="play-pause-button" value="play" disabled>
 									<input type="button" class="backward-button" disabled>
-								</span>
+                                    <%--<input type="button" class="" disabled>--%>
+                        </span>
                         <span class="backward-speed">8</span>
                     </div>
 
@@ -185,100 +176,100 @@
             return o;
         }
     };
-    var TipController = {
-        createNew: function () {
-            var o = {};
-            // properties
-            o.name = "TipController";
-
-            // methods
-            o.initialize = function () {
-                this.setNodeReferences();
-                this.setNodeEvents();
-                this.deviceDetection();
-            };
-
-            o.setNodeReferences = function () {
-                this.tipOverlay = document.querySelector("div.tip-overlay");
-                this.wrapper = document.querySelector(".wrapper");
-                this.body = document.querySelector("body");
-
-                this.cancelLink = document.querySelector(".tip-overlay a.cancel");
-                this.continueLink = document.querySelector(".tip-overlay a.continue");
-            };
-
-            o.setNodeEvents = function () {
-                this.cancelLink.onclick = function () {
-                    open(location, '_self').close();
-                    return false;
-                };
-
-                this.continueLink.onclick = function () {
-                    o.closeTip();
-                    return false;
-                };
-            };
-
-            o.deviceDetection = function () {
-                if (is.desktop()) {
-                    // Desktop Events
-                } else {
-                    // Mobile Events
-                    this.showTip();
-                    if (is.android() && is.not.chrome()) {
-                        this.androidChromeTip();
-                    }
-                }
-
-                if (Modernizr.backdropfilter) {
-                    // supported
-                } else {
-                    ObjClass.addClass(this.tipOverlay, "no-backdrop-filter black");
-                }
-
-            };
-
-            o.androidChromeTip = function () {
-                var _tpcon = this.tipOverlay.querySelector(".tip-container");
-                var _p = _tpcon.querySelector("p:nth-child(2)");
-
-                var _newNode = document.createElement("h2");
-                _newNode.innerHTML = "请使用 Chrome 浏览器";
-                _tpcon.insertBefore(_newNode, _p.nextSibling);
-
-                var _newNode2 = document.createElement("p");
-                _newNode2.innerHTML = "您当前正在使用 Android 系统，建议使用 Chrome 浏览器访问此页面以获得最佳体验。";
-                _tpcon.insertBefore(_newNode2, _newNode.nextSibling);
-            };
-
-            o.showTip = function () {
-                this.disableScroll();
-                ObjClass.addClass(this.tipOverlay, "show");
-            };
-
-            o.closeTip = function () {
-                ObjClass.removeClass(this.tipOverlay, "show");
-                o.enableScroll();
-                mc.loadMusic();
-            };
-
-            o.disableScroll = function () {
-                ObjClass.addClass(this.body, "disableScroll"); // For desktop
-                document.ontouchmove = function (event) { // For mobile
-                    event.preventDefault();
-                };
-            };
-
-            o.enableScroll = function () {
-                ObjClass.removeClass(this.body, "disableScroll");
-                document.ontouchmove = null;
-            };
-
-            // Execute functions and return object
-            o.initialize();
-            return o;
-        }
-    };
+//    var TipController = {
+//        createNew: function () {
+//            var o = {};
+//            // properties
+//            o.name = "TipController";
+//
+//            // methods
+//            o.initialize = function () {
+////                this.setNodeReferences();
+////                this.setNodeEvents();
+//                this.deviceDetection();
+//            };
+//
+////            o.setNodeReferences = function () {
+////                this.tipOverlay = document.querySelector("div.tip-overlay");
+////                this.wrapper = document.querySelector(".wrapper");
+////                this.body = document.querySelector("body");
+////
+////                this.cancelLink = document.querySelector(".tip-overlay a.cancel");
+////                this.continueLink = document.querySelector(".tip-overlay a.continue");
+////            };
+//
+////            o.setNodeEvents = function () {
+////                this.cancelLink.onclick = function () {
+////                    open(location, '_self').close();
+////                    return false;
+////                };
+////
+////                this.continueLink.onclick = function () {
+////                    o.closeTip();
+////                    return false;
+////                };
+////            };
+//
+//            o.deviceDetection = function () {
+//                if (is.desktop()) {
+//                    // Desktop Events
+//                } else {
+//                    // Mobile Events
+//                    this.showTip();
+//                    if (is.android() && is.not.chrome()) {
+//                        this.androidChromeTip();
+//                    }
+//                }
+//
+//                if (Modernizr.backdropfilter) {
+//                    // supported
+//                } else {
+//                    ObjClass.addClass(this.tipOverlay, "no-backdrop-filter black");
+//                }
+//
+//            };
+//
+////            o.androidChromeTip = function () {
+////                var _tpcon = this.tipOverlay.querySelector(".tip-container");
+////                var _p = _tpcon.querySelector("p:nth-child(2)");
+////
+////                var _newNode = document.createElement("h2");
+////                _newNode.innerHTML = "请使用 Chrome 浏览器";
+////                _tpcon.insertBefore(_newNode, _p.nextSibling);
+////
+////                var _newNode2 = document.createElement("p");
+////                _newNode2.innerHTML = "您当前正在使用 Android 系统，建议使用 Chrome 浏览器访问此页面以获得最佳体验。";
+////                _tpcon.insertBefore(_newNode2, _newNode.nextSibling);
+////            };
+//
+//            o.showTip = function () {
+//                this.disableScroll();
+//                ObjClass.addClass(this.tipOverlay, "show");
+//            };
+//
+//            o.closeTip = function () {
+//                ObjClass.removeClass(this.tipOverlay, "show");
+//                o.enableScroll();
+//                mc.loadMusic();
+//            };
+//
+//            o.disableScroll = function () {
+//                ObjClass.addClass(this.body, "disableScroll"); // For desktop
+//                document.ontouchmove = function (event) { // For mobile
+//                    event.preventDefault();
+//                };
+//            };
+//
+//            o.enableScroll = function () {
+//                ObjClass.removeClass(this.body, "disableScroll");
+//                document.ontouchmove = null;
+//            };
+//
+//            // Execute functions and return object
+//            o.initialize();
+//            return o;
+//        }
+//    };
 
     var MusicController = {
         createNew: function () {
@@ -303,7 +294,7 @@
                 this.playRateControl();
                 this.autoLoadControl();
 
-                this.tc = TipController.createNew();
+//                this.tc = TipController.createNew();
             };
 
             o.interfaceControl = function () {
@@ -486,6 +477,7 @@
 
             o.removeButtonsDisabled = function () {
                 o.playPauseButton.removeAttribute("disabled");
+                o.forwardButton.removeAttribute("disabled");
                 if (!(is.chrome() && is.android())) {
                     o.backwardButton.removeAttribute("disabled");
                 }
